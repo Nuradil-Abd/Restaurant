@@ -22,7 +22,7 @@
 
 2. перейдите в папку проекта:
 
-cd https://github.com/Nuradil-Abd/Java15.git
+cd https://github.com/Nuradil-Abd/Restaurant.git
 
 3. Убедитесь, что у вас установлены все зависимости:
 
