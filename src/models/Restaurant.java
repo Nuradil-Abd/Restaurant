@@ -1,0 +1,66 @@
+package models;
+
+import utils.GenerateId;
+
+import java.util.List;
+
+public class Restaurant {
+    private Long id;
+    private String name;
+    private String location;
+    private String restType;
+    private List<MenuItem> menuItems;
+
+    public Restaurant() {
+    }
+
+    public Restaurant(String name, String location, String restType, List<MenuItem> menuItems) {
+        this.id = GenerateId.genRestaurantId();
+        this.name = name;
+        this.location = location;
+        this.restType = restType;
+        this.menuItems = menuItems;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getRestType() {
+        return restType;
+    }
+
+    public void setRestType(String restType) {
+        this.restType = restType;
+    }
+
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public void setMenuItems(List<MenuItem> menuItems) {
+        this.menuItems = menuItems;
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant(" +
+                "name: '" + name + '\'' +
+                ", location: '" + location + '\'' +
+                ", restType: '" + restType + '\'' +
+                ", menuItems: " + menuItems +
+                ')';
+    }
+}
