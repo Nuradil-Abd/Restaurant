@@ -22,6 +22,10 @@ public class Restaurant {
         this.menuItems = menuItems;
     }
 
+    public Long getId() {return id;
+    }
+    public void setId(Long id) {this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -54,13 +58,15 @@ public class Restaurant {
         this.menuItems = menuItems;
     }
 
+
     @Override
     public String toString() {
-        return "Restaurant(" +
-                "name: '" + name + '\'' +
-                ", location: '" + location + '\'' +
-                ", restType: '" + restType + '\'' +
-                ", menuItems: " + menuItems +
-                ')';
+        return "Restaurant{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", restType='" + restType + '\'' +
+                ", menuItems=" + menuItems +
+                '}';
     }
 }
