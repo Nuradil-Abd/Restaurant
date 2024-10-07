@@ -1,5 +1,7 @@
 package service.impl;
 
+import dao.RestaurantDao;
+import dao.impl.RestaurantDaoImpl;
 import models.Restaurant;
 import service.RestaurantService;
 
@@ -7,6 +9,12 @@ import java.util.List;
 import java.util.Set;
 
 public class RestaurantServiceImpl implements RestaurantService {
+    private final RestaurantDao restaurantDao;
+
+    public RestaurantServiceImpl(RestaurantDao restaurantDao) {
+        this.restaurantDao = restaurantDao;
+    }
+
     @Override
     public String save(Restaurant restaurant) {
         return "";

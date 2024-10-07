@@ -11,7 +11,7 @@ import java.util.Set;
 public class RestaurantDaoImpl implements RestaurantDao {
     private final Database database;
 
-    protected RestaurantDaoImpl(Database database) {
+    public RestaurantDaoImpl(Database database) {
         this.database = database;
     }
 
