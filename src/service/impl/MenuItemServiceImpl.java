@@ -1,11 +1,19 @@
 package service.impl;
 
+import dao.MenuItemDao;
+import exceptions.NotFoundException;
 import models.MenuItem;
 import service.MenuItemService;
 
 import java.util.List;
 
 public class MenuItemServiceImpl implements MenuItemService {
+    private final MenuItemDao menuItemDao;
+
+    public MenuItemServiceImpl(MenuItemDao menuItemDao) {
+        this.menuItemDao = menuItemDao;
+    }
+
     @Override
     public String save(MenuItem menuItem) {
         return "";
@@ -28,7 +36,16 @@ public class MenuItemServiceImpl implements MenuItemService {
 
     @Override
     public MenuItem findById(Long id) {
-        return null;
+        MenuItem menuItem = menuItemDao.findById(id);
+        if (menuItem == null) {
+            try {
+                throw new NotFoundException("Menu item with id " + id + " not found");
+            } catch (NotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return menuItem;
     }
 
     @Override
