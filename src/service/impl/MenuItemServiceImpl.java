@@ -50,6 +50,14 @@ public class MenuItemServiceImpl implements MenuItemService {
 
     @Override
     public MenuItem findByName(String name) {
-        return null;
+        MenuItem menuItem = menuItemDao.findByName(name);
+        if (menuItem == null) {
+            try{
+                throw new NotFoundException("Menu item with name " + name + " not found");
+            } catch (NotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return menuItem;
     }
 }

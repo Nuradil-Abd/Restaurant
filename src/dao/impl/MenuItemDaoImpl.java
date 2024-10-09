@@ -47,7 +47,13 @@ public class MenuItemDaoImpl implements MenuItemDao {
 
     @Override
     public MenuItem findByName(String name) {
-        return null;
+
+
+        return database.restaurants.stream()
+                .flatMap(restaurant -> restaurant.getMenuItems().stream())
+                .filter(menuItem -> menuItem.getName().equals(name))
+                .findFirst()
+                .orElse(null);
     }
 
 }
